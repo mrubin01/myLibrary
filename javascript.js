@@ -5,6 +5,7 @@ function Book(title, author, subject) {
         throw Error("You must use the 'new' operator to call the constructor");
     }
 
+    this.id = self.crypto.randomUUID();
     this.title = title;
     this.author = author;
     this.subject = subject;
@@ -15,6 +16,8 @@ function Book(title, author, subject) {
     this.sayAuthor = function() {
         console.log(this.author)
     };
+
+    console.log(`New book created with id '${this.id}'`);
 }
 
 
