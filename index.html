@@ -7,23 +7,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="top-text">
-        <p>Books are sorted by ID</p>
+    <div class="grid-container">
+        <div class="top-text">
+            <p>Books are sorted by ID</p>
+        </div>
+
+        <button>New book</button>
+
+        <table id="book-table">
+            <caption>All my books</caption>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Subject</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+
     </div>
-
-    <button>New book</button>
-
-    <table id="book-table">
-        <caption>All my books</caption>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Subject</th>
-            </tr>
-        </thead>
-        <tbody id="table-body"></tbody>
-    </table>
 
 
     
