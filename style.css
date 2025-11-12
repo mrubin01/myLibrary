@@ -36,7 +36,7 @@
 .top-right-side-row {
   display: grid;
   grid-template-columns: auto auto; 
-  align-items: center;
+  align-items: start;
   gap: 20px;
 }
 
@@ -62,7 +62,7 @@
   background-color: white;
   padding: 10px;
   border-radius: 5px;
-  width: 220px;
+  width: 500px;
 }
 
 #book-form label {
