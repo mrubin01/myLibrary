@@ -25,11 +25,18 @@
 
 .top-right-side {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
   justify-items: start;
   align-items: center;
   background-color: cornflowerblue;
   padding: 10px;
+  gap: 20px;
+}
+
+.top-right-side-row {
+  display: grid;
+  grid-template-columns: auto auto; 
+  align-items: center;
   gap: 20px;
 }
 
