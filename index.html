@@ -8,15 +8,41 @@
 </head>
 <body>
     <div class="grid-container">
-        <div class="left-side">
-            <div class="top-text">
+        
+        <!-- Top left cell -->
+        <div class="top-left-side">
+            <div class="top-left-text">
+                <p>Use the button to add a new book --></p>
                 <p>Books are sorted by ID</p>
             </div>
+        </div>
 
+        <!-- Top right cell -->
+        <div class="top-right-side">
             <button id="new-book">New book</button>
         </div>
 
-        <div class="right-side">
+        <!-- Hidden form -->
+        <form id="book-form" class="hidden">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <button type="submit" id="add-book">Add book</button>
+        </form>
+
+        <!-- Bottom left cell -->
+        <div class="bottom-left-side">
+
+        </div>
+
+        <!-- Bottom right cell -->
+        <div class="bottom-right-side">
             <table id="book-table">
                 <caption>All my books</caption>
                 <thead>

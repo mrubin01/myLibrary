@@ -1,26 +1,34 @@
 * {
-  margin: 5px;
+  margin: 2px;
   padding: 5px;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 5px;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1px;
     padding: 20px 20px 20px 20px;
-    height: 90vh; 
+    height: 100vh; 
 }
 
-.left-side {
+.top-left-side {
     display: grid;
     grid-column: 1 / 2;
-    grid-row: 1 / 3;
+    grid-row: 1 / 2;
     background-color: aquamarine;
 }
 
-.left-side > .top-text {
+.top-left-side > .top-text {
     align-content: start;
+}
+
+.top-right-side {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-color: cornflowerblue;
+    padding: 10px;
 }
 
 #new-book {
@@ -29,13 +37,42 @@
     width: 100px;
 }
 
-.right-side {
-    display: grid;
-    background-color: hotpink;
-    grid-row: 1 / 3;
+/* Hidden form */
+.hidden {
+  display: none;
 }
 
-.right-side > #book-table {
+#book-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 10px;
+}
+
+#book-form label {
+  font-weight: bold;
+}
+
+#book-form input {
+  padding: 5px;
+}
+
+.bottom-left-side {
+    display: grid;
+    background-color: brown;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
+.bottom-right-side {
+    display: grid;
+    background-color: hotpink;
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+}
+
+.bottom-right-side > #book-table {
     display: grid;
     grid-column: 2 / 3;
     grid-row: 1 / 3;
