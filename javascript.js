@@ -28,24 +28,23 @@ newBookBtn.addEventListener('click', () => {
 });
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Get form values
-    const title = document.getElementById('title').value.trim();
-    const author = document.getElementById('author').value.trim();
-    const subject = document.getElementById('subject').value.trim();
+  const title = document.getElementById('title').value.trim();
+  const author = document.getElementById('author').value.trim();
+  const subject = document.getElementById('subject').value.trim();
 
-    if (title && author && subject) {
-        const newBook = new Book(title, author, subject);
-        myLibrary.push(newBook);
+  if (title && author && subject) {
+    const newBook = new Book(title, author, subject);
+    myLibrary.push(newBook);
 
-        console.log("Book added:", newBook);
-        console.log("Library:", myLibrary);
+    console.log("Book added:", newBook);
+    console.log("Library:", myLibrary);
 
-        // Reset form and hide it
-        form.reset();
-        form.classList.add('hidden');
-    } else {
-        alert('Please fill in all fields.');
-    }
-}); 
+    // Reset and hide form
+    form.reset();
+    form.classList.add('hidden');
+  } else {
+    alert('Please fill in all fields.');
+  }
+});
