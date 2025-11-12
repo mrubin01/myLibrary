@@ -20,29 +20,27 @@ function Book(title, author, subject) {
     console.log(`New book created with id '${this.id}'`);
 }
 
-// --- DOM loaded ---
 document.addEventListener("DOMContentLoaded", () => {
   const newBookBtn = document.getElementById("new-book");
   const form = document.getElementById("book-form");
 
-  // Safety check: confirm elements are found
-  console.log("Script loaded ✅");
+  // these rows are used only to debug --> REMOVE
+  console.log("Script loaded OK");
   console.log("Button:", newBookBtn);
   console.log("Form:", form);
 
   // If the button or form doesn't exist, stop here
   if (!newBookBtn || !form) {
-    console.error("❌ Could not find #new-book or #book-form in DOM");
+    console.error("ERROR: Could not find #new-book or #book-form in DOM");
     return;
   }
 
-  // Toggle form visibility
   newBookBtn.addEventListener("click", () => {
     console.log("New book button clicked");
     form.classList.toggle("hidden");
   });
 
-  // Handle form submit
+  // the new book is pushed into the array myLibrary
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 

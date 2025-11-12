@@ -1,5 +1,5 @@
 * {
-  margin: 2px;
+  margin: 1px;
   padding: 5px;
 }
 
@@ -9,6 +9,7 @@
     grid-template-rows: repeat(4, 1fr);
     padding: 20px 20px 20px 20px;
     height: 100vh; 
+    gap: 0px;
 }
 
 .top-left-side {
