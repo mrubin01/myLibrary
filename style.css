@@ -25,12 +25,12 @@
 
 .top-right-side {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: auto auto;
   justify-items: start;
-  align-items: start;
+  align-items: center;
   background-color: cornflowerblue;
   padding: 10px;
-  gap: 10px;
+  gap: 20px;
 }
 
 #new-book {
@@ -39,11 +39,13 @@
   border: 1px solid #666;
   border-radius: 4px;
   font-weight: bold;
+  height: 40px;
+  width: 100px;
 }
 
 /* Hidden form */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 #book-form {

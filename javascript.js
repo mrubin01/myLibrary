@@ -10,41 +10,58 @@ function Book(title, author, subject) {
     this.author = author;
     this.subject = subject;
 
-    this.sayTitle = function() {
+/*     this.sayTitle = function() {
         console.log(this.title)
     };
     this.sayAuthor = function() {
         console.log(this.author)
-    };
+    }; */
 
     console.log(`New book created with id '${this.id}'`);
 }
 
-const newBookBtn = document.getElementById('new-book');
-const form = document.getElementById('book-form');
+// --- DOM loaded ---
+document.addEventListener("DOMContentLoaded", () => {
+  const newBookBtn = document.getElementById("new-book");
+  const form = document.getElementById("book-form");
 
-newBookBtn.addEventListener('click', () => {
-  form.classList.toggle('hidden');
-});
+  // Safety check: confirm elements are found
+  console.log("Script loaded ✅");
+  console.log("Button:", newBookBtn);
+  console.log("Form:", form);
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const title = document.getElementById('title').value.trim();
-  const author = document.getElementById('author').value.trim();
-  const subject = document.getElementById('subject').value.trim();
-
-  if (title && author && subject) {
-    const newBook = new Book(title, author, subject);
-    myLibrary.push(newBook);
-
-    console.log("Book added:", newBook);
-    console.log("Library:", myLibrary);
-
-    // Reset and hide form
-    form.reset();
-    form.classList.add('hidden');
-  } else {
-    alert('Please fill in all fields.');
+  // If the button or form doesn't exist, stop here
+  if (!newBookBtn || !form) {
+    console.error("❌ Could not find #new-book or #book-form in DOM");
+    return;
   }
+
+  // Toggle form visibility
+  newBookBtn.addEventListener("click", () => {
+    console.log("New book button clicked");
+    form.classList.toggle("hidden");
+  });
+
+  // Handle form submit
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const title = document.getElementById("title").value.trim();
+    const author = document.getElementById("author").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+
+    if (title && author && subject) {
+      const newBook = new Book(title, author, subject);
+      myLibrary.push(newBook);
+
+      console.log("📚 Book added:", newBook);
+      console.log("📘 Library:", myLibrary);
+
+      form.reset();
+      form.classList.add("hidden");
+    } else {
+      alert("Please fill in all fields.");
+    }
+  });
 });
+
