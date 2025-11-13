@@ -20,6 +20,37 @@ function Book(title, author, subject) {
     console.log(`New book created with id '${this.id}'`);
 }
 
+
+// This function will add all the books in the array
+function renderLibrary() {
+    const tableBody = document.getElementById("table-body");
+    tableBody.innerHTML = ""; // Clear existing rows
+
+    // Sort by ID if you want (optional, as per your note)
+    const sortedBooks = [...myLibrary].sort((a, b) => a.id.localeCompare(b.id));
+
+    sortedBooks.forEach((book) => {
+        const row = document.createElement("tr");
+
+        const titleCell = document.createElement("td");
+        const authorCell = document.createElement("td");
+        const subjectCell = document.createElement("td");
+
+        titleCell.textContent = book.title;
+        authorCell.textContent = book.author;
+        subjectCell.textContent = book.subject;
+
+        row.appendChild(titleCell);
+        row.appendChild(authorCell);
+        row.appendChild(subjectCell);
+        tableBody.appendChild(row);
+    });
+}
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const newBookBtn = document.getElementById("new-book");
   const form = document.getElementById("book-form");
@@ -52,8 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const newBook = new Book(title, author, subject);
       myLibrary.push(newBook);
 
-      console.log("📚 Book added:", newBook);
-      console.log("📘 Library:", myLibrary);
+      console.log("Book added:", newBook);
+      console.log("Library:", myLibrary);
+
+      renderLibrary();
 
       form.reset();
       form.classList.add("hidden");
