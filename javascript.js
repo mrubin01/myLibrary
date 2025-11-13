@@ -21,7 +21,7 @@ function Book(title, author, subject) {
 }
 
 
-// This function will add all the books in the array
+// This function will add all the books in the array and will sort them by id
 function renderLibrary() {
     const tableBody = document.getElementById("table-body");
     tableBody.innerHTML = ""; // Clear existing rows
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // the new book is pushed into the array myLibrary
   form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // this prevent refreshing the page by default
 
     const title = document.getElementById("title").value.trim();
     const author = document.getElementById("author").value.trim();
