@@ -26,7 +26,7 @@ function renderLibrary() {
     const tableBody = document.getElementById("table-body");
     tableBody.innerHTML = ""; // Clear existing rows
 
-    // Sort by ID if you want (optional, as per your note)
+    // Sort by ID if you want
     const sortedBooks = [...myLibrary].sort((a, b) => a.id.localeCompare(b.id));
 
     sortedBooks.forEach((book) => {
