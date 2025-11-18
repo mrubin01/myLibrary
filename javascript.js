@@ -32,17 +32,28 @@ function renderLibrary() {
     sortedBooks.forEach((book) => {
         const row = document.createElement("tr");
 
-        const titleCell = document.createElement("td");
-        const authorCell = document.createElement("td");
-        const subjectCell = document.createElement("td");
+        // this replaces document.createElement as it's easier to add a button
+        row.innerHTML = 
+          `<td>${book.title}</td>
+          <td>${book.author}</td>
+          <td>${book.subject}</td>
+          <td><button class="delete-btn" data-id="${book.id}">Delete</button></td>`
+        ;
 
-        titleCell.textContent = book.title;
-        authorCell.textContent = book.author;
-        subjectCell.textContent = book.subject;
+        // const titleCell = document.createElement("td");
+        // const authorCell = document.createElement("td");
+        // const subjectCell = document.createElement("td");
+        // const deleteCell = document.createElement("td");
 
-        row.appendChild(titleCell);
-        row.appendChild(authorCell);
-        row.appendChild(subjectCell);
+        // titleCell.textContent = book.title;
+        // authorCell.textContent = book.author;
+        // subjectCell.textContent = book.subject;
+        // deleteCell
+
+        // row.appendChild(titleCell);
+        // row.appendChild(authorCell);
+        // row.appendChild(subjectCell);
+
         tableBody.appendChild(row);
     });
 }
