@@ -55,6 +55,14 @@ function renderLibrary() {
         // row.appendChild(subjectCell);
 
         tableBody.appendChild(row);
+
+        // attach event listener to delete-btn
+        document.querySelectorAll(".delete-btn").forEach(btn => {
+          btn.addEventListener("click", (e) => {
+            const id = e.target.dataset.id;
+            deleteBook(id); 
+          })
+        })
     });
 }
 
