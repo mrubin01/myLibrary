@@ -59,7 +59,13 @@ function renderLibrary() {
 }
 
 
-
+function deleteBook(id) {
+  const index = myLibrary.findIndex(book => book.id === id);
+  if (index !== -1) {
+    myLibrary.splice(index, 1);
+    renderLibrary();
+  }
+}
 
 
 document.addEventListener("DOMContentLoaded", () => {
