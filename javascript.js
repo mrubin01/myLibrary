@@ -9,6 +9,7 @@ function Book(title, author, subject) {
     this.title = title;
     this.author = author;
     this.subject = subject;
+    this.status = "To Read"; 
 
 /*     this.sayTitle = function() {
         console.log(this.title)
@@ -37,6 +38,7 @@ function renderLibrary() {
           `<td>${book.title}</td>
           <td>${book.author}</td>
           <td>${book.subject}</td>
+          <td><button class="status-btn" data-id="${book.id}">${book.status}</button></td>
           <td><button class="delete-btn" data-id="${book.id}">Delete</button></td>`
         ;
 
