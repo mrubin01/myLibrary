@@ -42,6 +42,9 @@ function renderLibrary() {
           <td><button class="delete-btn" data-id="${book.id}">Delete</button></td>`
         ;
 
+        const statusBtn = row.querySelector(".status-btn");
+        statusBtn.classList.add(book.status === "Read" ? "read" : "to-read");
+
         // const titleCell = document.createElement("td");
         // const authorCell = document.createElement("td");
         // const subjectCell = document.createElement("td");
@@ -58,30 +61,15 @@ function renderLibrary() {
 
         tableBody.appendChild(row);
 
-        // event listener to toggle status
-        document.querySelectorAll(".status-btn").forEach(btn => {
-          btn.addEventListener("click", (e) => {
-            const id = e.target.dataset.id;
-            toggleStatus(id);
-          })
-        })
-
-        // event listener to delete-btn
-        document.querySelectorAll(".delete-btn").forEach(btn => {
-          btn.addEventListener("click", (e) => {
-            const id = e.target.dataset.id;
-            deleteBook(id); 
-          })
-        })
     });
 }
 
 function toggleStatus(id) {
-  const book = myLibrary.find(book => book.id === id);
-  if (book) {
-    book.status = book.status == "To Read" ? "Read" : "To Read";
-    renderLibrary();
-  }
+    const book = myLibrary.find(book => book.id === id);
+    if (book) {
+        book.status = book.status === "To Read" ? "Read" : "To Read";
+        renderLibrary();  
+    }
 }
 
 function deleteBook(id) {

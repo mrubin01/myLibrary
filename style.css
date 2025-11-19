@@ -151,3 +151,29 @@
     word-wrap: break-word;
     max-width: 200px;
 }
+
+.status-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.1s;
+}
+
+.status-btn:active {
+    transform: scale(0.95);
+}
+
+.status-btn.to-read {
+    background-color: #ffefd6;
+    color: #b96b00;
+    border: 1px solid #e6c089;
+}
+
+.status-btn.read {
+    background-color: #d6ffde;
+    color: #007a25;
+    border: 1px solid #9dd8a6;
+}
