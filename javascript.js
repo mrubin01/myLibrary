@@ -58,7 +58,15 @@ function renderLibrary() {
 
         tableBody.appendChild(row);
 
-        // attach event listener to delete-btn
+        // event listener to toggle status
+        document.querySelectorAll(".status-btn").forEach(btn => {
+          btn.addEventListener("click", (e) => {
+            const id = e.target.dataset.id;
+            toggleStatus(id);
+          })
+        })
+
+        // event listener to delete-btn
         document.querySelectorAll(".delete-btn").forEach(btn => {
           btn.addEventListener("click", (e) => {
             const id = e.target.dataset.id;
@@ -68,6 +76,9 @@ function renderLibrary() {
     });
 }
 
+function toggleStatus(id) {
+  
+}
 
 function deleteBook(id) {
   const index = myLibrary.findIndex(book => book.id === id);
