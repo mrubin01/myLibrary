@@ -77,7 +77,11 @@ function renderLibrary() {
 }
 
 function toggleStatus(id) {
-  
+  const book = myLibrary.find(book => book.id === id);
+  if (book) {
+    book.status = book.status == "To Read" ? "Read" : "To Read";
+    renderLibrary();
+  }
 }
 
 function deleteBook(id) {
