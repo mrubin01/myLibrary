@@ -72,6 +72,7 @@ function toggleStatus(id) {
     }
 }
 
+
 function deleteBook(id) {
   const index = myLibrary.findIndex(book => book.id === id);
   if (index !== -1) {
@@ -124,5 +125,20 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Please fill in all fields.");
     }
   });
+
+  document.getElementById("table-body").addEventListener("click", (e) => {
+        // toggle status button
+        if (e.target.classList.contains("status-btn")) {
+            const id = e.target.dataset.id;
+            toggleStatus(id);
+        }
+
+        // delete button clicked
+        if (e.target.classList.contains("delete-btn")) {
+            const id = e.target.dataset.id;
+            deleteBook(id);
+        }
+    });
+
 });
 
